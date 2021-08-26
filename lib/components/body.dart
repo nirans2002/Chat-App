@@ -1,3 +1,4 @@
+import 'package:chatapp/components/chat_card.dart';
 import 'package:chatapp/components/filled_outline_button.dart';
 import 'package:chatapp/constants.dart';
 import 'package:chatapp/models/Chat.dart';
@@ -30,34 +31,13 @@ class Body extends StatelessWidget {
         Expanded(
           child: ListView.builder(
             itemCount: chatsData.length,
-            itemBuilder: (context, index) => ChatCard(chat: chatsData[index]),
+            itemBuilder: (context, index) => ChatCard(
+              chat: chatsData[index],
+              press: () {},
+            ),
           ),
         ),
       ],
-    );
-  }
-}
-
-class ChatCard extends StatelessWidget {
-  const ChatCard({
-    Key key,
-    this.chat,
-  }) : super(key: key);
-
-  final Chat chat;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-          horizontal: kDefaultPadding, vertical: kDefaultPadding * 0.75),
-      child: Row(
-        children: [
-          CircleAvatar(
-            radius: 24,
-            backgroundImage: AssetImage(chat.image),
-          ),
-        ],
-      ),
     );
   }
 }
