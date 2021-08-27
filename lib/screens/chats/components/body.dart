@@ -1,9 +1,10 @@
-import 'package:chatapp/components/chat_card.dart';
 import 'package:chatapp/components/filled_outline_button.dart';
 import 'package:chatapp/constants.dart';
 import 'package:chatapp/models/Chat.dart';
 import 'package:chatapp/screens/messages/message_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'chat_card.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -16,10 +17,7 @@ class Body extends StatelessWidget {
           color: kPrimaryColor,
           child: Row(
             children: [
-              FillOutlineButton(
-                press: () {},
-                text: "Recent Messages",
-              ),
+              FillOutlineButton(press: () {}, text: "Recent Message"),
               SizedBox(width: kDefaultPadding),
               FillOutlineButton(
                 press: () {},
@@ -35,10 +33,11 @@ class Body extends StatelessWidget {
             itemBuilder: (context, index) => ChatCard(
               chat: chatsData[index],
               press: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MessagesScreen(),
-                  )),
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MessagesScreen(),
+                ),
+              ),
             ),
           ),
         ),

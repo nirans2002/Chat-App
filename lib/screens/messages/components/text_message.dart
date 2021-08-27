@@ -1,12 +1,14 @@
-import 'package:chatapp/constants.dart';
 import 'package:chatapp/models/ChatMessage.dart';
 import 'package:flutter/material.dart';
+
+import '../../../constants.dart';
 
 class TextMessage extends StatelessWidget {
   const TextMessage({
     Key key,
     this.message,
   }) : super(key: key);
+
   final ChatMessage message;
 
   @override
@@ -17,15 +19,16 @@ class TextMessage extends StatelessWidget {
         vertical: kDefaultPadding / 2,
       ),
       decoration: BoxDecoration(
-        color: kPrimaryColor.withOpacity(message.isSender ? 1 : 0.08),
-        borderRadius: BorderRadius.circular(10),
+        color: kPrimaryColor.withOpacity(message.isSender ? 1 : 0.1),
+        borderRadius: BorderRadius.circular(30),
       ),
       child: Text(
         message.text,
         style: TextStyle(
-            color: message.isSender
-                ? Colors.white
-                : Theme.of(context).textTheme.bodyText1.color),
+          color: message.isSender
+              ? Colors.white
+              : Theme.of(context).textTheme.bodyText1.color,
+        ),
       ),
     );
   }
