@@ -35,7 +35,12 @@ class SignInorUpScreen extends StatelessWidget {
               PrimaryButton(
                 color: Theme.of(context).colorScheme.secondary,
                 text: 'Sign Up',
-                press: () {},
+                press: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatScreen(),
+                  ),
+                ),
               ),
               Spacer(flex: 2),
             ],
