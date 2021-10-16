@@ -1,7 +1,7 @@
 # Chat App
 
-A working chat app on Android and iOS with sample data. 
-Developed using Flutter.
+A working chat app on Android and iOS with sample data. <br>
+Developed using Flutter.<br>
 source ref video: https://www.youtube.com/watch?v=uiJF-ShOLyo
 <br>
 ![Screenshot_1](https://user-images.githubusercontent.com/42601162/137598068-15b88113-66dd-446b-be13-ae382f3a816f.jpg)
